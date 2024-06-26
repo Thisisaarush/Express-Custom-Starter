@@ -8,7 +8,7 @@
     "start": "node --loader ts-node/esm src/index.ts",
     "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
     "build": "tsc",
-    "start:dist": "node dist/src/index.js",
+    "start:dist": "node dist/index.js",
     "lint": "eslint --fix src",
     "format": "prettier --write src",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",

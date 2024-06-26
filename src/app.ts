@@ -14,10 +14,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(helmet())
 app.use(morgan("dev"))
-app.use(middllewares.errorHandler)
-app.use(middllewares.notFoundHandler)
 
-// Base Routes
+// Base Route
 app.get("/", (req, res) => {
   res.json({
     message: "Hello World!"
@@ -25,6 +23,10 @@ app.get("/", (req, res) => {
 })
 
 // Routes for /api/v1
-app.get("/api/v1", api)
+app.use("/api/v1", api)
+
+// Middlewares for handling errors and not found routes
+app.use(middllewares.notFoundHandler)
+app.use(middllewares.errorHandler)
 
 export default app
