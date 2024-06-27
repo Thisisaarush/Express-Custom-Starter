@@ -1,4 +1,5 @@
 import express from "express"
+import example from "./routes/example.route.js"
 
 const router = express.Router()
 
@@ -8,5 +9,7 @@ router.get("/", (req, res) => {
     message: "Hello /api/v1"
   })
 })
+
+router.use("/example", example)
 
 export default router
